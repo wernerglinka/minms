@@ -2,11 +2,13 @@
 title: test page
 header_text: "And here is the header content"
 footer_text: "...and the footer content"
+date: 2018-06-01
 ---
 
 {% extends "layouts/page.html" %}
 
 {% block content %}
 <h1>{{ title }}</h1>
+<p>Date: {{ date | dateFilter("MMMM D, YYYY") }} </p>
 <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Etiam porta sem malesuada magna mollis euismod.</p>
 {% endblock %}
