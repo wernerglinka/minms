@@ -1,14 +1,24 @@
 <!doctype html>
 <html lang="en" itemscope itemtype=”http://schema.org/Article”>
-  <head>
-    The page head
-  </head>
+<head>
+    {% include "layouts/head.html" %}
+</head>
 
-  <body>
-    <div class="container">
-        <section >
-            {{ contents }}
-        </section>
-    </div>
-  </body>
+<body>
+<div>
+  {% include "layouts/header.html" %}
+</div>
+
+<div class="container">
+  <section>
+    {% block content %}
+      This is the default content
+    {% endblock %}
+  </section>
+</div>
+
+<footer>
+  {% include "layouts/footer.html" %}
+</footer>
+</body>
 </html>

@@ -1,20 +1,20 @@
-var Metalsmith = require('metalsmith');
-var inPlace = require('metalsmith-in-place');
-var path = require('path');
+const Metalsmith = require('metalsmith');
+const inPlace = require('metalsmith-in-place');
+const path = require('path');
 
+const metalsmith = Metalsmith(__dirname)
+  .source('dev/content')
+  .destination('build')
+  //.ignore(__dirname + "/**/_*.njk")
+  .clean(true);
 
-Metalsmith(__dirname)
-    .source('./dev/content')      
-    .destination('./build')
-    .clean(true)                  
+metalsmith.use(inPlace({
+  "pattern": "**/*.njk",
+  "engineOptions": {
+    root: __dirname + '/dev/'
+  }
+}))
 
-    .use(inPlace({
-        "pattern": "**/*.njk",
-        "engineOptions": {
-            path: path.join(__dirname, 'layout')
-        }
-    }))
-
-    .build(function(err) {    
-        if (err) throw err;
-    });
+metalsmith.build(function(err) {
+  if (err) throw err;
+});

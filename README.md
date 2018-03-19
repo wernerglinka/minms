@@ -3,6 +3,15 @@ A minimal Metalsmith setup to test Metalsmith-in-place 2.x.
 
 Metalsmith-in-place is used to transform html/nunjucks source files into final html.
 
+## Resolution
+There is something to be said about the Metalsmith Slack channel. I found help and the issue has been resolved. I was very lucky that [@bashaus](https://www.bashkim.com/) was online. Based on this repo he showed me how to use Metalsmith-in-place. I also received valuable feedback from [@jcrawford](http://josephcrawford.com/), thank you to you both.
+
+I have updated the repo so this code now works as expected.
+
+
+
+## Original Issue
+
 After reading @ismay's **metalsmith-layouts** [README file](https://github.com/ismay/metalsmith-layouts) I had expected that I only need to use the in-place plugin but that doesn't work as expected.
 
 Source file: _/dev/content/index.njk_
